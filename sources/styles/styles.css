@@ -214,7 +214,6 @@ select {
     padding-left: 40px;
     padding-right: 40px;
     border: 1px solid var(--gray-color);
-    /* background-color: #eb4a5a; */
 }
 select:hover {
     cursor: pointer;
@@ -226,35 +225,6 @@ select:hover {
 select *{
     color: #eb4a5a;
 }
-/* .filter__list {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    top: 435px;
-    padding-left: 12px;
-    left: 240px;
-    transform :translateX(-1000%);
-    z-index: 20;
-} */
-/* .filter__list.active {
-    transform: translateX(0);
-    transition:none .5s linear;
-} */
-/* .filter__list * {
-    color: var(--gray-color);
-    text-decoration: none;
-    padding: 4px;
-    background-color: var(--white-color);
-    border: 1px solid var(--gray-color);
-    box-shadow: 10px 10px 20px 1px var(--gray-color); 
-} */
-/* .filter__btn {
-        height: fit-content;
-        border: none;
-        margin-block: auto;
-        font-size: 24px;
-} */
 .products{
     display: flex;
     flex-wrap: wrap;
@@ -270,7 +240,6 @@ select *{
     border-radius: 10px;
     width: 100%;
     max-width: 260px;
-    /* box-shadow: 1px 1px 10px 1px var(--gray-color); */
 }
 .product:hover {
     box-shadow: 1px 1px 5px 1px var(--gray-color);
@@ -358,8 +327,6 @@ select *{
     margin: 0 auto;
     line-height: 2;
     align-items: center;
-    /* border: solid 1px black; */
-
 }
 .close__modal{
     position: absolute;
@@ -374,37 +341,28 @@ select *{
     transform: scale(1.5);
     transition: 0.3s ;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (min-width: 900px) { 
-    /* .filter__list {
-        left: 280px;
-        transform :translateX(-1000%); 
-    } */
+@media (max-width: 900px) { 
     main { 
         margin-left: 40px ;
         margin-right: 40px;
     }
-}
-/* @media (min-width: 1200px) {
-   .logo{
-    margin-left: 4px;
-    margin-right: 4px;
-   }
-} */
+   .content__modal{
+        background-color: white;
+        width: 90%;
+        height: 90%;
+        border-radius: 20px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+     .content__modal p{
+        color: black;
+        width: 100%;
+    }
+    .close__modal{
+        position: absolute;
+        top: 5%;
+        right: 8%;
+    }
+} 

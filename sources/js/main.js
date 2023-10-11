@@ -17,15 +17,6 @@ async function dataBase () {
     }
     return(db)
 }
-// function handels () {
-//     const btn = document.querySelector('.filter__btn');
-//     const list= document.querySelector('.filter__list');
-//     list.addEventListener('click', function() {
-//         list.classList.remove('active') })
-//     btn.addEventListener('click', function(){
-//         list.classList.toggle('active');
-//     });
-// }
 function cartHandles () {
     const btn= document.querySelector(".cart__btn");
     const cartModal= document.querySelector(".cart__modal");
@@ -114,25 +105,22 @@ function handleCart (db) {
     const cart= document.querySelector('.cart__products')
     cart.addEventListener('click', (event) => {
         if (event.target.classList.contains('less')) {
-            // console.log('quiero restar');
             const id= +(event.target.closest('.cart__product').id);
             if (db.cart[id].amount===1){
-                return alert ('uno, es la cantidad minima que puedes comprar')    
+                return alert ('Uno, es la cantidad minima que puedes comprar')    
             }
             db.cart[id].amount--;
         }
         if (event.target.classList.contains('plus')) {
-            // console.log('quiero sumar');
             const id= +(event.target.closest('.cart__product').id);
             if (db.cart[id].amount===db.cart[id].quantity) {
-                return alert('el producto no se encuentra en existencia')    
+                return alert('El producto no se encuentra en existencia')    
             }
             db.cart[id].amount++;
         } 
         if (event.target.classList.contains('trash')){
-            // console.log('quiero borrar');
             const id= +(event.target.closest('.cart__product').id);
-            const response= confirm('esta seguro que desea retirar el producto?');
+            const response= confirm('¿Esta seguro que desea retirar el producto?');
                 if (response) {
                 delete db.cart[id];
                 }
@@ -167,7 +155,7 @@ function handlesTotals(db) {
         if (!(Object.values(db.cart).length)) {
             return alert ('Debes agregar productos antes de realizar una compra')
         }
-        const response= confirm ('estas seguro de realizar esta compra?');
+        const response= confirm ('¿Estas seguro de realizar esta compra?');
         if (!response) {
             return;
         }
@@ -217,7 +205,6 @@ function showDetails (products){
             if (event.target.classList.contains('btn__view')) {
                 const id = +event.target.closest('.product').id
                 const article = products.find(element => element.id == id)
-                // console.log(article);
                 const { category, description, image, name, price, quantity} = article
                 let html = `
                     <div class="modal__product">
@@ -244,7 +231,6 @@ function showDetails (products){
 }
 async function main() {
     const db = await dataBase();
-    // handels();
     cartHandles();
     printProducts(db.products);
     addToCart(db);
